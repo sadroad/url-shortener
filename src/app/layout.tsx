@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { Toaster } from "sonner";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import { cn } from '@/lib/utils';
 
@@ -25,7 +27,12 @@ export default function RootLayout({
       <body className={cn(
         "min-h-screen bg-background font-sans antialiased",
         fontSans.variable
-      )}>{children}<Toaster richColors /></body>
+      )}>
+      {children}
+      <Toaster richColors />
+      <Analytics />
+      <SpeedInsights />
+      </body>
     </html>
   )
 }
