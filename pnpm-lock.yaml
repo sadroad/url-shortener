@@ -4,10 +4,15 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  '@libsql/client@0.4.0-pre.5':
+    hash: hrtrcne5kbgjser63falbzsu7a
+    path: patches/@libsql__client@0.4.0-pre.5.patch
+
 dependencies:
   '@libsql/client':
     specifier: 0.4.0-pre.5
-    version: 0.4.0-pre.5
+    version: 0.4.0-pre.5(patch_hash=hrtrcne5kbgjser63falbzsu7a)
   '@radix-ui/react-icons':
     specifier: ^1.3.0
     version: 1.3.0(react@18.2.0)
@@ -621,7 +626,7 @@ packages:
       '@jridgewell/resolve-uri': 3.1.1
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  /@libsql/client@0.4.0-pre.5:
+  /@libsql/client@0.4.0-pre.5(patch_hash=hrtrcne5kbgjser63falbzsu7a):
     resolution: {integrity: sha512-GyKigCBslE5uztwT7mpvp9Zn0z3iWjnufcfeTeDSFPMyXCPjSAHUOiwSLAaHii909w6EQacA692CXmYYFo/eig==}
     dependencies:
       '@libsql/hrana-client': 0.5.5
@@ -632,6 +637,7 @@ packages:
       - encoding
       - utf-8-validate
     dev: false
+    patched: true
 
   /@libsql/darwin-arm64@0.2.0-pre.6:
     resolution: {integrity: sha512-VIhL4tIelxLC4NFAdD/TUgWlMZvX7q18Zf6urVfqeNRJw2lTnO0exByjOFYJL3mqhQ53gVH73CoSP3/w8TyJtA==}
@@ -1628,7 +1634,7 @@ packages:
       sqlite3:
         optional: true
     dependencies:
-      '@libsql/client': 0.4.0-pre.5
+      '@libsql/client': 0.4.0-pre.5(patch_hash=hrtrcne5kbgjser63falbzsu7a)
       '@types/react': 18.2.46
       react: 18.2.0
     dev: false

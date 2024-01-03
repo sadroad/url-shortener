@@ -1,0 +1,23 @@
+diff --git a/lib-esm/uri.js b/lib-esm/uri.js
+index b518e48ff0007308502feb44ceaee09c8e128512..a6db966c52386cc1b1986a6b6bbcbfa4df225aad 100644
+--- a/lib-esm/uri.js
++++ b/lib-esm/uri.js
+@@ -47,10 +47,14 @@ function parseAuthority(text) {
+     return { host, port, userinfo };
+ }
+ const AUTHORITY_RE = (() => {
+-    const USERINFO = '(?<username>[^:]*)(:(?<password>.*))?';
+-    const HOST = '((?<host>[^:\\[\\]]*)|(\\[(?<host_br>[^\\[\\]]*)\\]))';
+-    const PORT = '(?<port>[0-9]*)';
+-    return new RegExp(`^(${USERINFO}@)?${HOST}(:${PORT})?$`, "su");
++    //const USERINFO = '(?<username>[^:]*)(:(?<password>.*))?';
++    //const HOST = '((?<host>[^:\\[\\]]*)|(\\[(?<host_br>[^\\[\\]]*)\\]))';
++    //const PORT = '(?<port>[0-9]*)';
++    return new RegExp(
++      `^((?<username>[^:]*)(:(?<password>.*))?@)?((?<host>[^:\\[\\]]*)|(\\[(?<host_br>[^\\[\\]]*)\\]))(:(?<port>[0-9]*))?$`,
++      "su"
++    );
++    //return new RegExp(`^(${USERINFO}@)?${HOST}(:${PORT})?$`, "su");
+ })();
+ // Query string is parsed as application/x-www-form-urlencoded according to the Web URL standard:
+ // https://url.spec.whatwg.org/#urlencoded-parsing

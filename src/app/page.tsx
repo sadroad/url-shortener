@@ -8,8 +8,6 @@ import { useFormState } from "react-dom"
 import {toast} from "sonner";
 import { createShortUrl } from "@/app/actions";
 
-export const runtime = "edge";
-
 const initialState = {
   message: "",
   error: false,

@@ -8,6 +8,7 @@ export async function GET(_: Request, {params}: {params: {slug: string}}) {
     const url = await db.query.urls.findFirst({
         where: (urls, {eq}) => eq(urls.id, slug)
     });
+    // const url = {url: "https://google.com"};
     if (!url) {
         redirect("/", RedirectType.replace);
     }
